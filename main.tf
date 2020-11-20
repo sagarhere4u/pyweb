@@ -1,4 +1,4 @@
-#1.0
+#2.0
 provider "kubernetes" {
   config_context = "kubernetes-admin@kubernetes"
 }
