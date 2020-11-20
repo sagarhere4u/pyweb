@@ -52,7 +52,7 @@ resource "kubernetes_deployment" "pyweb-deployment" {
 
       spec {
         container {
-          image = "smehta26/pyweb:2.0"
+          image = "smehta26/pyweb:1.0"
           name  = "pyweb"
           port {
             container_port = 5000
