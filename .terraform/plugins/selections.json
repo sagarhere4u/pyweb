@@ -1,4 +1,8 @@
 {
+  "registry.terraform.io/hashicorp/external": {
+    "hash": "h1:Q5xqryWI3tCY8yr+fugq7dz4Qz+8g4GaW9ZS8dc6Ob8=",
+    "version": "2.0.0"
+  },
   "registry.terraform.io/hashicorp/kubernetes": {
     "hash": "h1:whoGs/NeucMF8U/urPaeXdQUb+ppaO1Ae4r5aJRhfrU=",
     "version": "1.13.3"
