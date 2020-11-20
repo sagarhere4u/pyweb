@@ -17,6 +17,15 @@ resource "kubernetes_service" "pyweb-service" {
   }
 }
 
+data "external" "pyweb-ip" {
+  program = ["/bin/sh", "${path.module}/getip.sh" ]
+  depends_on = [kubernetes_service.pyweb-service]
+}
+
+output "public-ip" {
+  value = data.external.pyweb-ip.result
+}
+
 resource "kubernetes_deployment" "pyweb-deployment" {
   metadata {
     name = "pyweb-deployment"
@@ -43,7 +52,7 @@ resource "kubernetes_deployment" "pyweb-deployment" {
 
       spec {
         container {
-          image = "smehta26/pyweb:1.0"
+          image = "smehta26/pyweb:2.0"
           name  = "pyweb"
           port {
             container_port = 5000
